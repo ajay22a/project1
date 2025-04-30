@@ -1,0 +1,3124 @@
+login as: root
+root@10.10.22.99's password:
+Last login: Wed Jan 29 07:47:49 2025 from 10.10.0.58
+[root@vara-sys-22-01 ~]# lsblk
+NAME                     MAJ:MIN RM   SIZE RO MOUNTPOINT
+sdb                        8:16   0   423G  0
+sda                        8:0    0   122G  0
+├─sda1                     8:1    0   512M  0 /boot
+└─sda2                     8:2    0 121.5G  0
+  ├─rootvg-swaplv (dm-0) 253:0    0   8.5G  0 [SWAP]
+  ├─rootvg-rootlv (dm-1) 253:1    0    63G  0 /
+  ├─rootvg-homelv (dm-2) 253:2    0    10G  0 /home
+  ├─rootvg-varlv (dm-3)  253:3    0    10G  0 /var
+  ├─rootvg-optlv (dm-4)  253:4    0    10G  0 /opt
+  ├─rootvg-tmplv (dm-5)  253:5    0    10G  0 /tmp
+  └─rootvg-u01lv (dm-6)  253:6    0    10G  0 /u01
+sdd                        8:48   0     3G  0
+sdc                        8:32   0   421G  0
+sr0                       11:0    1   3.4G  0
+[root@vara-sys-22-01 ~]# fdisk /dev/sdb
+Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
+Building a new DOS disklabel with disk identifier 0x06d24615.
+Changes will remain in memory only, until you decide to write them.
+After that, of course, the previous content won't be recoverable.
+
+Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
+
+WARNING: DOS-compatible mode is deprecated. It's strongly recommended to
+         switch off the mode (command 'c') and change display units to
+         sectors (command 'u').
+
+Command (m for help): n
+Command action
+   e   extended
+   p   primary partition (1-4)
+p
+Partition number (1-4): 1
+First cylinder (1-55219, default 1):
+Using default value 1
+Last cylinder, +cylinders or +size{K,M,G} (1-55219, default 55219): +6G
+
+Command (m for help): n
+Command action
+   e   extended
+   p   primary partition (1-4)
+p
+Partition number (1-4): 2
+First cylinder (785-55219, default 785):
+Using default value 785
+Last cylinder, +cylinders or +size{K,M,G} (785-55219, default 55219): +6G
+
+Command (m for help): p
+
+Disk /dev/sdb: 454.2 GB, 454192791552 bytes
+255 heads, 63 sectors/track, 55219 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x06d24615
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1               1         784     6297448+  83  Linux
+/dev/sdb2             785        1568     6297480   83  Linux
+
+Command (m for help): n
+Command action
+   e   extended
+   p   primary partition (1-4)
+3
+Invalid partition number for type `3'
+Command action
+   e   extended
+   p   primary partition (1-4)
+p
+Partition number (1-4): 3
+First cylinder (1569-55219, default 1569):
+Using default value 1569
+Last cylinder, +cylinders or +size{K,M,G} (1569-55219, default 55219): +6G
+
+Command (m for help): n
+Command action
+   e   extended
+   p   primary partition (1-4)
+e
+Selected partition 4
+First cylinder (2353-55219, default 2353):
+Using default value 2353
+Last cylinder, +cylinders or +size{K,M,G} (2353-55219, default 55219):
+Using default value 55219
+
+Command (m for help): n
+First cylinder (2353-55219, default 2353):
+Using default value 2353
+Last cylinder, +cylinders or +size{K,M,G} (2353-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (3137-55219, default 3137):
+Using default value 3137
+Last cylinder, +cylinders or +size{K,M,G} (3137-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (3921-55219, default 3921):
+Using default value 3921
+Last cylinder, +cylinders or +size{K,M,G} (3921-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (4705-55219, default 4705):
+Using default value 4705
+Last cylinder, +cylinders or +size{K,M,G} (4705-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (5489-55219, default 5489):
+Using default value 5489
+Last cylinder, +cylinders or +size{K,M,G} (5489-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (6273-55219, default 6273):
+Using default value 6273
+Last cylinder, +cylinders or +size{K,M,G} (6273-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (7057-55219, default 7057):
+Using default value 7057
+Last cylinder, +cylinders or +size{K,M,G} (7057-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (7841-55219, default 7841):
+Using default value 7841
+Last cylinder, +cylinders or +size{K,M,G} (7841-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (8625-55219, default 8625):
+Using default value 8625
+Last cylinder, +cylinders or +size{K,M,G} (8625-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (9409-55219, default 9409):
+Using default value 9409
+Last cylinder, +cylinders or +size{K,M,G} (9409-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (10193-55219, default 10193):
+Using default value 10193
+Last cylinder, +cylinders or +size{K,M,G} (10193-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (10977-55219, default 10977):
+Using default value 10977
+Last cylinder, +cylinders or +size{K,M,G} (10977-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (11761-55219, default 11761):
+Using default value 11761
+Last cylinder, +cylinders or +size{K,M,G} (11761-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (12545-55219, default 12545):
+Using default value 12545
+Last cylinder, +cylinders or +size{K,M,G} (12545-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (13329-55219, default 13329):
+Using default value 13329
+Last cylinder, +cylinders or +size{K,M,G} (13329-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (14113-55219, default 14113):
+Using default value 14113
+Last cylinder, +cylinders or +size{K,M,G} (14113-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (14897-55219, default 14897):
+Using default value 14897
+Last cylinder, +cylinders or +size{K,M,G} (14897-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (15681-55219, default 15681):
+Using default value 15681
+Last cylinder, +cylinders or +size{K,M,G} (15681-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (16465-55219, default 16465):
+Using default value 16465
+Last cylinder, +cylinders or +size{K,M,G} (16465-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (17249-55219, default 17249):
+Using default value 17249
+Last cylinder, +cylinders or +size{K,M,G} (17249-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (18033-55219, default 18033):
+Using default value 18033
+Last cylinder, +cylinders or +size{K,M,G} (18033-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (18817-55219, default 18817):
+Using default value 18817
+Last cylinder, +cylinders or +size{K,M,G} (18817-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (19601-55219, default 19601):
+Using default value 19601
+Last cylinder, +cylinders or +size{K,M,G} (19601-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (20385-55219, default 20385):
+Using default value 20385
+Last cylinder, +cylinders or +size{K,M,G} (20385-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (21169-55219, default 21169):
+Using default value 21169
+Last cylinder, +cylinders or +size{K,M,G} (21169-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (21953-55219, default 21953):
+Using default value 21953
+Last cylinder, +cylinders or +size{K,M,G} (21953-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (22737-55219, default 22737):
+Using default value 22737
+Last cylinder, +cylinders or +size{K,M,G} (22737-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (23521-55219, default 23521):
+Using default value 23521
+Last cylinder, +cylinders or +size{K,M,G} (23521-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (24305-55219, default 24305):
+Using default value 24305
+Last cylinder, +cylinders or +size{K,M,G} (24305-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (25089-55219, default 25089):
+Using default value 25089
+Last cylinder, +cylinders or +size{K,M,G} (25089-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (25873-55219, default 25873):
+Using default value 25873
+Last cylinder, +cylinders or +size{K,M,G} (25873-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (26657-55219, default 26657):
+Using default value 26657
+Last cylinder, +cylinders or +size{K,M,G} (26657-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (27441-55219, default 27441):
+Using default value 27441
+Last cylinder, +cylinders or +size{K,M,G} (27441-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (28225-55219, default 28225):
+Using default value 28225
+Last cylinder, +cylinders or +size{K,M,G} (28225-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (29009-55219, default 29009):
+Using default value 29009
+Last cylinder, +cylinders or +size{K,M,G} (29009-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (29793-55219, default 29793):
+Using default value 29793
+Last cylinder, +cylinders or +size{K,M,G} (29793-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (30577-55219, default 30577):
+Using default value 30577
+Last cylinder, +cylinders or +size{K,M,G} (30577-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (31361-55219, default 31361):
+Using default value 31361
+Last cylinder, +cylinders or +size{K,M,G} (31361-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (32145-55219, default 32145):
+Using default value 32145
+Last cylinder, +cylinders or +size{K,M,G} (32145-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (32929-55219, default 32929):
+Using default value 32929
+Last cylinder, +cylinders or +size{K,M,G} (32929-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (33713-55219, default 33713):
+Using default value 33713
+Last cylinder, +cylinders or +size{K,M,G} (33713-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (34497-55219, default 34497):
+Using default value 34497
+Last cylinder, +cylinders or +size{K,M,G} (34497-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (35281-55219, default 35281):
+Using default value 35281
+Last cylinder, +cylinders or +size{K,M,G} (35281-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (36065-55219, default 36065):
+Using default value 36065
+Last cylinder, +cylinders or +size{K,M,G} (36065-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (36849-55219, default 36849):
+Using default value 36849
+Last cylinder, +cylinders or +size{K,M,G} (36849-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (37633-55219, default 37633):
+Using default value 37633
+Last cylinder, +cylinders or +size{K,M,G} (37633-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (38417-55219, default 38417):
+Using default value 38417
+Last cylinder, +cylinders or +size{K,M,G} (38417-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (39201-55219, default 39201):
+Using default value 39201
+Last cylinder, +cylinders or +size{K,M,G} (39201-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (39985-55219, default 39985):
+Using default value 39985
+Last cylinder, +cylinders or +size{K,M,G} (39985-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (40769-55219, default 40769):
+Using default value 40769
+Last cylinder, +cylinders or +size{K,M,G} (40769-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (41553-55219, default 41553):
+Using default value 41553
+Last cylinder, +cylinders or +size{K,M,G} (41553-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (42337-55219, default 42337):
+Using default value 42337
+Last cylinder, +cylinders or +size{K,M,G} (42337-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (43121-55219, default 43121):
+Using default value 43121
+Last cylinder, +cylinders or +size{K,M,G} (43121-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (43905-55219, default 43905):
+Using default value 43905
+Last cylinder, +cylinders or +size{K,M,G} (43905-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (44689-55219, default 44689):
+Using default value 44689
+Last cylinder, +cylinders or +size{K,M,G} (44689-55219, default 55219): +6G
+
+Command (m for help): n
+First cylinder (45473-55219, default 45473):
+Using default value 45473
+Last cylinder, +cylinders or +size{K,M,G} (45473-55219, default 55219): +6G
+
+Command (m for help): n
+The maximum number of partitions has been created
+
+Command (m for help):
+Command (m for help): p
+
+Disk /dev/sdb: 454.2 GB, 454192791552 bytes
+255 heads, 63 sectors/track, 55219 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x06d24615
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1               1         784     6297448+  83  Linux
+/dev/sdb2             785        1568     6297480   83  Linux
+/dev/sdb3            1569        2352     6297480   83  Linux
+/dev/sdb4            2353       55219   424654177+   5  Extended
+/dev/sdb5            2353        3136     6297448+  83  Linux
+/dev/sdb6            3137        3920     6297448+  83  Linux
+/dev/sdb7            3921        4704     6297448+  83  Linux
+/dev/sdb8            4705        5488     6297448+  83  Linux
+/dev/sdb9            5489        6272     6297448+  83  Linux
+/dev/sdb10           6273        7056     6297448+  83  Linux
+/dev/sdb11           7057        7840     6297448+  83  Linux
+/dev/sdb12           7841        8624     6297448+  83  Linux
+/dev/sdb13           8625        9408     6297448+  83  Linux
+/dev/sdb14           9409       10192     6297448+  83  Linux
+/dev/sdb15          10193       10976     6297448+  83  Linux
+/dev/sdb16          10977       11760     6297448+  83  Linux
+/dev/sdb17          11761       12544     6297448+  83  Linux
+/dev/sdb18          12545       13328     6297448+  83  Linux
+/dev/sdb19          13329       14112     6297448+  83  Linux
+/dev/sdb20          14113       14896     6297448+  83  Linux
+/dev/sdb21          14897       15680     6297448+  83  Linux
+/dev/sdb22          15681       16464     6297448+  83  Linux
+/dev/sdb23          16465       17248     6297448+  83  Linux
+/dev/sdb24          17249       18032     6297448+  83  Linux
+/dev/sdb25          18033       18816     6297448+  83  Linux
+/dev/sdb26          18817       19600     6297448+  83  Linux
+/dev/sdb27          19601       20384     6297448+  83  Linux
+/dev/sdb28          20385       21168     6297448+  83  Linux
+/dev/sdb29          21169       21952     6297448+  83  Linux
+/dev/sdb30          21953       22736     6297448+  83  Linux
+/dev/sdb31          22737       23520     6297448+  83  Linux
+/dev/sdb32          23521       24304     6297448+  83  Linux
+/dev/sdb33          24305       25088     6297448+  83  Linux
+/dev/sdb34          25089       25872     6297448+  83  Linux
+/dev/sdb35          25873       26656     6297448+  83  Linux
+/dev/sdb36          26657       27440     6297448+  83  Linux
+/dev/sdb37          27441       28224     6297448+  83  Linux
+/dev/sdb38          28225       29008     6297448+  83  Linux
+/dev/sdb39          29009       29792     6297448+  83  Linux
+/dev/sdb40          29793       30576     6297448+  83  Linux
+/dev/sdb41          30577       31360     6297448+  83  Linux
+/dev/sdb42          31361       32144     6297448+  83  Linux
+/dev/sdb43          32145       32928     6297448+  83  Linux
+/dev/sdb44          32929       33712     6297448+  83  Linux
+/dev/sdb45          33713       34496     6297448+  83  Linux
+/dev/sdb46          34497       35280     6297448+  83  Linux
+/dev/sdb47          35281       36064     6297448+  83  Linux
+/dev/sdb48          36065       36848     6297448+  83  Linux
+/dev/sdb49          36849       37632     6297448+  83  Linux
+/dev/sdb50          37633       38416     6297448+  83  Linux
+/dev/sdb51          38417       39200     6297448+  83  Linux
+/dev/sdb52          39201       39984     6297448+  83  Linux
+/dev/sdb53          39985       40768     6297448+  83  Linux
+/dev/sdb54          40769       41552     6297448+  83  Linux
+/dev/sdb55          41553       42336     6297448+  83  Linux
+/dev/sdb56          42337       43120     6297448+  83  Linux
+/dev/sdb57          43121       43904     6297448+  83  Linux
+/dev/sdb58          43905       44688     6297448+  83  Linux
+/dev/sdb59          44689       45472     6297448+  83  Linux
+/dev/sdb60          45473       46256     6297448+  83  Linux
+
+Command (m for help): w
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+Syncing disks.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb
+mke2fs 1.41.12 (17-May-2010)
+/dev/sdb is entire device, not just one partition!
+Proceed anyway? (y,n) y
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+27721728 inodes, 110886912 blocks
+5544345 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=4294967296
+3384 block groups
+32768 blocks per group, 32768 fragments per group
+8192 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
+        4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
+        102400000
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 35 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# blkid
+/dev/sda1: UUID="017ef323-bf97-4d38-94cd-90f9bc1a92e8" TYPE="ext4"
+/dev/sda2: UUID="muFK0n-cfMP-wHRI-nHKS-qv1o-PKo2-iXOpJY" TYPE="LVM2_member"
+/dev/mapper/rootvg-swaplv: UUID="2dfe36d0-f6dc-49b8-a4ef-74f28b1d2497" TYPE="swap"
+/dev/mapper/rootvg-rootlv: UUID="9b5a7ccf-ad36-41ac-96e6-cf7c95c7bd07" TYPE="ext4"
+/dev/mapper/rootvg-homelv: UUID="ae2a16e0-6a0a-494f-b75b-fe657f29b7c5" TYPE="ext4"
+/dev/mapper/rootvg-varlv: UUID="d695189a-7114-4115-adf0-ca85658f5fa8" TYPE="ext4"
+/dev/mapper/rootvg-optlv: UUID="a40c8b1c-7fd9-407a-b5e7-0bf6d7a16694" TYPE="ext4"
+/dev/mapper/rootvg-tmplv: UUID="e81c3216-1c43-49b4-9efb-ac2d727e055c" TYPE="ext4"
+/dev/mapper/rootvg-u01lv: UUID="9aa89f87-cf6d-4630-bdda-d7e621144955" TYPE="ext4"
+[root@vara-sys-22-01 ~]# blkid /dev/sdb1
+[root@vara-sys-22-01 ~]# lsblk
+NAME                     MAJ:MIN RM   SIZE RO MOUNTPOINT
+sdb                        8:16   0   423G  0
+├─sdb1                     8:17   0     6G  0
+├─sdb2                     8:18   0     6G  0
+├─sdb3                     8:19   0     6G  0
+├─sdb4                     8:20   0     1K  0
+├─sdb5                     8:21   0     6G  0
+├─sdb6                     8:22   0     6G  0
+├─sdb7                     8:23   0     6G  0
+├─sdb8                     8:24   0     6G  0
+├─sdb9                     8:25   0     6G  0
+├─sdb10                    8:26   0     6G  0
+├─sdb11                    8:27   0     6G  0
+├─sdb12                    8:28   0     6G  0
+├─sdb13                    8:29   0     6G  0
+├─sdb14                    8:30   0     6G  0
+├─sdb15                    8:31   0     6G  0
+├─sdb16                  259:0    0     6G  0
+├─sdb17                  259:1    0     6G  0
+├─sdb18                  259:2    0     6G  0
+├─sdb19                  259:3    0     6G  0
+├─sdb20                  259:4    0     6G  0
+├─sdb21                  259:5    0     6G  0
+├─sdb22                  259:6    0     6G  0
+├─sdb23                  259:7    0     6G  0
+├─sdb24                  259:8    0     6G  0
+├─sdb25                  259:9    0     6G  0
+├─sdb26                  259:10   0     6G  0
+├─sdb27                  259:11   0     6G  0
+├─sdb28                  259:12   0     6G  0
+├─sdb29                  259:13   0     6G  0
+├─sdb30                  259:14   0     6G  0
+├─sdb31                  259:15   0     6G  0
+├─sdb32                  259:16   0     6G  0
+├─sdb33                  259:17   0     6G  0
+├─sdb34                  259:18   0     6G  0
+├─sdb35                  259:19   0     6G  0
+├─sdb36                  259:20   0     6G  0
+├─sdb37                  259:21   0     6G  0
+├─sdb38                  259:22   0     6G  0
+├─sdb39                  259:23   0     6G  0
+├─sdb40                  259:24   0     6G  0
+├─sdb41                  259:25   0     6G  0
+├─sdb42                  259:26   0     6G  0
+├─sdb43                  259:27   0     6G  0
+├─sdb44                  259:28   0     6G  0
+├─sdb45                  259:29   0     6G  0
+├─sdb46                  259:30   0     6G  0
+├─sdb47                  259:31   0     6G  0
+├─sdb48                  259:32   0     6G  0
+├─sdb49                  259:33   0     6G  0
+├─sdb50                  259:34   0     6G  0
+├─sdb51                  259:35   0     6G  0
+├─sdb52                  259:36   0     6G  0
+├─sdb53                  259:37   0     6G  0
+├─sdb54                  259:38   0     6G  0
+├─sdb55                  259:39   0     6G  0
+├─sdb56                  259:40   0     6G  0
+├─sdb57                  259:41   0     6G  0
+├─sdb58                  259:42   0     6G  0
+├─sdb59                  259:43   0     6G  0
+└─sdb60                  259:44   0     6G  0
+sda                        8:0    0   122G  0
+├─sda1                     8:1    0   512M  0 /boot
+└─sda2                     8:2    0 121.5G  0
+  ├─rootvg-swaplv (dm-0) 253:0    0   8.5G  0 [SWAP]
+  ├─rootvg-rootlv (dm-1) 253:1    0    63G  0 /
+  ├─rootvg-homelv (dm-2) 253:2    0    10G  0 /home
+  ├─rootvg-varlv (dm-3)  253:3    0    10G  0 /var
+  ├─rootvg-optlv (dm-4)  253:4    0    10G  0 /opt
+  ├─rootvg-tmplv (dm-5)  253:5    0    10G  0 /tmp
+  └─rootvg-u01lv (dm-6)  253:6    0    10G  0 /u01
+sdd                        8:48   0     3G  0
+sdc                        8:32   0   421G  0
+sr0                       11:0    1   3.4G  0
+[root@vara-sys-22-01 ~]# mount -t ext4 /dev/sdb1
+Usage: mount -V                 : print version
+       mount -h                 : print this help
+       mount                    : list mounted filesystems
+       mount -l                 : idem, including volume labels
+So far the informational part. Next the mounting.
+The command is `mount [-t fstype] something somewhere'.
+Details found in /etc/fstab may be omitted.
+       mount -a [-t|-O] ...     : mount all stuff from /etc/fstab
+       mount device             : mount device at the known place
+       mount directory          : mount known device here
+       mount -t type dev dir    : ordinary mount command
+Note that one does not really mount a device, one mounts
+a filesystem (of the given type) found on the device.
+One can also mount an already visible directory tree elsewhere:
+       mount --bind olddir newdir
+or move a subtree:
+       mount --move olddir newdir
+One can change the type of mount containing the directory dir:
+       mount --make-shared dir
+       mount --make-slave dir
+       mount --make-private dir
+       mount --make-unbindable dir
+One can change the type of all the mounts in a mount subtree
+containing the directory dir:
+       mount --make-rshared dir
+       mount --make-rslave dir
+       mount --make-rprivate dir
+       mount --make-runbindable dir
+A device can be given by name, say /dev/hda1 or /dev/cdrom,
+or by label, using  -L label  or by uuid, using  -U uuid .
+Other options: [-nfFrsvw] [-o options] [-p passwdfd].
+For many more details, say  man 8 mount .
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb1
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 26 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# blkid
+/dev/sda1: UUID="017ef323-bf97-4d38-94cd-90f9bc1a92e8" TYPE="ext4"
+/dev/sda2: UUID="muFK0n-cfMP-wHRI-nHKS-qv1o-PKo2-iXOpJY" TYPE="LVM2_member"
+/dev/mapper/rootvg-swaplv: UUID="2dfe36d0-f6dc-49b8-a4ef-74f28b1d2497" TYPE="swap"
+/dev/mapper/rootvg-rootlv: UUID="9b5a7ccf-ad36-41ac-96e6-cf7c95c7bd07" TYPE="ext4"
+/dev/mapper/rootvg-homelv: UUID="ae2a16e0-6a0a-494f-b75b-fe657f29b7c5" TYPE="ext4"
+/dev/mapper/rootvg-varlv: UUID="d695189a-7114-4115-adf0-ca85658f5fa8" TYPE="ext4"
+/dev/mapper/rootvg-optlv: UUID="a40c8b1c-7fd9-407a-b5e7-0bf6d7a16694" TYPE="ext4"
+/dev/mapper/rootvg-tmplv: UUID="e81c3216-1c43-49b4-9efb-ac2d727e055c" TYPE="ext4"
+/dev/mapper/rootvg-u01lv: UUID="9aa89f87-cf6d-4630-bdda-d7e621144955" TYPE="ext4"
+/dev/sdb1: UUID="59224099-803a-4baa-98e0-fd21601e501b" TYPE="ext4"
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb2
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574370 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 36 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb3
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574370 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 34 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb5
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 26 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb6
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 28 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb7
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 32 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb8
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 24 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb9
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 32 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb10
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 39 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb11
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 29 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb12
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 30 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb{13..60}
+mke2fs 1.41.12 (17-May-2010)
+mkfs.ext4: invalid blocks count - /dev/sdb14
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb13
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 28 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb14
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 20 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb15
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 20 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb16
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 38 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb17
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 26 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb18
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 28 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb19
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 22 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb20
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 32 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb21
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 36 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb22
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 23 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb23
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 36 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb24
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 24 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb25
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 23 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb26
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 33 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb27
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 36 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb28
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 29 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb29
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 30 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb30
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 23 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb31
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 25 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb32
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 39 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb33
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 28 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb34
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 36 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb35
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 24 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb36
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 33 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb37
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 25 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb38
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 28 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb39
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 26 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb40
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 24 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb41
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 20 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb42
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 38 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb43
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 30 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb44
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 20 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb45
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 22 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb46
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 20 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb47
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 33 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb48
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 38 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb49
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 20 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb50
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 31 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb51
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 37 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb52
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 30 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb53
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 24 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb54
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 23 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb55
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 27 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb56
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 28 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb57
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 20 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb58
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 23 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb59
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 32 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkfs -t ext4 /dev/sdb60
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+394352 inodes, 1574362 blocks
+78718 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1614807040
+49 block groups
+32768 blocks per group, 32768 fragments per group
+8048 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 36 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 ~]# mkdir -p /1lab{01..60}/1user1
+[root@vara-sys-22-01 ~]# cd /1lab01/1user1
+[root@vara-sys-22-01 1user1]# pwd
+/1lab01/1user1
+[root@vara-sys-22-01 1user1]# cd /1lab45/1user1
+[root@vara-sys-22-01 1user1]# pwd
+/1lab45/1user1
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb1 /1lab01
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb2 /1lab02
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb3 /1lab03
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb5 /1lab05
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb6 /1lab06
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb7 /1lab07
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb8 /1lab08
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb9 /1lab09
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb10 /1lab10
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb11 /1lab11
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb12 /1lab12
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb13 /1lab13
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb14 /1lab14
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb15 /1lab15
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb16 /1lab16
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb17 /1lab17
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb18 /1lab18
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb19 /1lab19
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb20 /1lab20
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb21 /1lab21
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb22 /1lab22
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb23 /1lab23
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb24 /1lab24
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb25 /1lab25
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb26 /1lab26
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb27 /1lab27
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb28 /1lab28
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb29 /1lab29
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb30 /1lab30
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb31 /1lab31
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb32 /1lab32
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb33 /1lab33
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb34 /1lab34
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb35 /1lab35
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb36 /1lab36
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb37 /1lab37
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb38 /1lab38
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb39 /1lab39
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb40 /1lab40
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb41 /1lab41
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb42 /1lab42
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb43 /1lab43
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb44 /1lab44
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb45 /1lab45
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb46 /1lab46
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb47 /1lab47
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb48 /1lab48
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb49 /1lab49
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb50 /1lab50
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb51 /1lab51
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb52 /1lab52
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb53 /1lab53
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb54 /1lab54
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb55 /1lab55
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb56 /1lab56
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb57 /1lab57
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb58 /1lab58
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb59 /1lab59
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdb60 /1lab60
+[root@vara-sys-22-01 1user1]# vi /etc/fstab
+[root@vara-sys-22-01 1user1]# vi /etc/fstab
+[root@vara-sys-22-01 1user1]# mount -a
+[root@vara-sys-22-01 1user1]# df -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/rootvg-rootlv
+                       63G  2.5G   57G   5% /
+tmpfs                 2.0G   88K  2.0G   1% /dev/shm
+/dev/sda1             504M   42M  437M   9% /boot
+/dev/mapper/rootvg-homelv
+                      9.9G  151M  9.2G   2% /home
+/dev/mapper/rootvg-optlv
+                      9.9G  151M  9.2G   2% /opt
+/dev/mapper/rootvg-tmplv
+                      9.9G  151M  9.2G   2% /tmp
+/dev/mapper/rootvg-u01lv
+                      9.9G  151M  9.2G   2% /u01
+/dev/mapper/rootvg-varlv
+                      9.9G  231M  9.2G   3% /var
+/dev/sdb1             6.0G  141M  5.5G   3% /1lab01
+/dev/sdb2             6.0G  141M  5.5G   3% /1lab02
+/dev/sdb3             6.0G  141M  5.5G   3% /1lab03
+/dev/sdb5             6.0G  141M  5.5G   3% /1lab05
+/dev/sdb6             6.0G  141M  5.5G   3% /1lab06
+/dev/sdb7             6.0G  141M  5.5G   3% /1lab07
+/dev/sdb8             6.0G  141M  5.5G   3% /1lab08
+/dev/sdb9             6.0G  141M  5.5G   3% /1lab09
+/dev/sdb10            6.0G  141M  5.5G   3% /1lab10
+/dev/sdb11            6.0G  141M  5.5G   3% /1lab11
+/dev/sdb12            6.0G  141M  5.5G   3% /1lab12
+/dev/sdb13            6.0G  141M  5.5G   3% /1lab13
+/dev/sdb14            6.0G  141M  5.5G   3% /1lab14
+/dev/sdb15            6.0G  141M  5.5G   3% /1lab15
+/dev/sdb16            6.0G  141M  5.5G   3% /1lab16
+/dev/sdb17            6.0G  141M  5.5G   3% /1lab17
+/dev/sdb18            6.0G  141M  5.5G   3% /1lab18
+/dev/sdb19            6.0G  141M  5.5G   3% /1lab19
+/dev/sdb20            6.0G  141M  5.5G   3% /1lab20
+/dev/sdb21            6.0G  141M  5.5G   3% /1lab21
+/dev/sdb22            6.0G  141M  5.5G   3% /1lab22
+/dev/sdb23            6.0G  141M  5.5G   3% /1lab23
+/dev/sdb24            6.0G  141M  5.5G   3% /1lab24
+/dev/sdb25            6.0G  141M  5.5G   3% /1lab25
+/dev/sdb26            6.0G  141M  5.5G   3% /1lab26
+/dev/sdb27            6.0G  141M  5.5G   3% /1lab27
+/dev/sdb28            6.0G  141M  5.5G   3% /1lab28
+/dev/sdb29            6.0G  141M  5.5G   3% /1lab29
+/dev/sdb30            6.0G  141M  5.5G   3% /1lab30
+/dev/sdb31            6.0G  141M  5.5G   3% /1lab31
+/dev/sdb32            6.0G  141M  5.5G   3% /1lab32
+/dev/sdb33            6.0G  141M  5.5G   3% /1lab33
+/dev/sdb34            6.0G  141M  5.5G   3% /1lab34
+/dev/sdb35            6.0G  141M  5.5G   3% /1lab35
+/dev/sdb36            6.0G  141M  5.5G   3% /1lab36
+/dev/sdb37            6.0G  141M  5.5G   3% /1lab37
+/dev/sdb38            6.0G  141M  5.5G   3% /1lab38
+/dev/sdb39            6.0G  141M  5.5G   3% /1lab39
+/dev/sdb40            6.0G  141M  5.5G   3% /1lab40
+/dev/sdb41            6.0G  141M  5.5G   3% /1lab41
+/dev/sdb42            6.0G  141M  5.5G   3% /1lab42
+/dev/sdb43            6.0G  141M  5.5G   3% /1lab43
+/dev/sdb44            6.0G  141M  5.5G   3% /1lab44
+/dev/sdb45            6.0G  141M  5.5G   3% /1lab45
+/dev/sdb46            6.0G  141M  5.5G   3% /1lab46
+/dev/sdb47            6.0G  141M  5.5G   3% /1lab47
+/dev/sdb48            6.0G  141M  5.5G   3% /1lab48
+/dev/sdb49            6.0G  141M  5.5G   3% /1lab49
+/dev/sdb50            6.0G  141M  5.5G   3% /1lab50
+/dev/sdb51            6.0G  141M  5.5G   3% /1lab51
+/dev/sdb52            6.0G  141M  5.5G   3% /1lab52
+/dev/sdb53            6.0G  141M  5.5G   3% /1lab53
+/dev/sdb54            6.0G  141M  5.5G   3% /1lab54
+/dev/sdb55            6.0G  141M  5.5G   3% /1lab55
+/dev/sdb56            6.0G  141M  5.5G   3% /1lab56
+/dev/sdb57            6.0G  141M  5.5G   3% /1lab57
+/dev/sdb58            6.0G  141M  5.5G   3% /1lab58
+/dev/sdb59            6.0G  141M  5.5G   3% /1lab59
+/dev/sdb60            6.0G  141M  5.5G   3% /1lab60
+/dev/sdb31            6.0G  141M  5.5G   3% /1lab30
+[root@vara-sys-22-01 1user1]# umount /1lab30
+[root@vara-sys-22-01 1user1]# df -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/rootvg-rootlv
+                       63G  2.5G   57G   5% /
+tmpfs                 2.0G   88K  2.0G   1% /dev/shm
+/dev/sda1             504M   42M  437M   9% /boot
+/dev/mapper/rootvg-homelv
+                      9.9G  151M  9.2G   2% /home
+/dev/mapper/rootvg-optlv
+                      9.9G  151M  9.2G   2% /opt
+/dev/mapper/rootvg-tmplv
+                      9.9G  151M  9.2G   2% /tmp
+/dev/mapper/rootvg-u01lv
+                      9.9G  151M  9.2G   2% /u01
+/dev/mapper/rootvg-varlv
+                      9.9G  231M  9.2G   3% /var
+/dev/sdb1             6.0G  141M  5.5G   3% /1lab01
+/dev/sdb2             6.0G  141M  5.5G   3% /1lab02
+/dev/sdb3             6.0G  141M  5.5G   3% /1lab03
+/dev/sdb5             6.0G  141M  5.5G   3% /1lab05
+/dev/sdb6             6.0G  141M  5.5G   3% /1lab06
+/dev/sdb7             6.0G  141M  5.5G   3% /1lab07
+/dev/sdb8             6.0G  141M  5.5G   3% /1lab08
+/dev/sdb9             6.0G  141M  5.5G   3% /1lab09
+/dev/sdb10            6.0G  141M  5.5G   3% /1lab10
+/dev/sdb11            6.0G  141M  5.5G   3% /1lab11
+/dev/sdb12            6.0G  141M  5.5G   3% /1lab12
+/dev/sdb13            6.0G  141M  5.5G   3% /1lab13
+/dev/sdb14            6.0G  141M  5.5G   3% /1lab14
+/dev/sdb15            6.0G  141M  5.5G   3% /1lab15
+/dev/sdb16            6.0G  141M  5.5G   3% /1lab16
+/dev/sdb17            6.0G  141M  5.5G   3% /1lab17
+/dev/sdb18            6.0G  141M  5.5G   3% /1lab18
+/dev/sdb19            6.0G  141M  5.5G   3% /1lab19
+/dev/sdb20            6.0G  141M  5.5G   3% /1lab20
+/dev/sdb21            6.0G  141M  5.5G   3% /1lab21
+/dev/sdb22            6.0G  141M  5.5G   3% /1lab22
+/dev/sdb23            6.0G  141M  5.5G   3% /1lab23
+/dev/sdb24            6.0G  141M  5.5G   3% /1lab24
+/dev/sdb25            6.0G  141M  5.5G   3% /1lab25
+/dev/sdb26            6.0G  141M  5.5G   3% /1lab26
+/dev/sdb27            6.0G  141M  5.5G   3% /1lab27
+/dev/sdb28            6.0G  141M  5.5G   3% /1lab28
+/dev/sdb29            6.0G  141M  5.5G   3% /1lab29
+/dev/sdb30            6.0G  141M  5.5G   3% /1lab30
+/dev/sdb31            6.0G  141M  5.5G   3% /1lab31
+/dev/sdb32            6.0G  141M  5.5G   3% /1lab32
+/dev/sdb33            6.0G  141M  5.5G   3% /1lab33
+/dev/sdb34            6.0G  141M  5.5G   3% /1lab34
+/dev/sdb35            6.0G  141M  5.5G   3% /1lab35
+/dev/sdb36            6.0G  141M  5.5G   3% /1lab36
+/dev/sdb37            6.0G  141M  5.5G   3% /1lab37
+/dev/sdb38            6.0G  141M  5.5G   3% /1lab38
+/dev/sdb39            6.0G  141M  5.5G   3% /1lab39
+/dev/sdb40            6.0G  141M  5.5G   3% /1lab40
+/dev/sdb41            6.0G  141M  5.5G   3% /1lab41
+/dev/sdb42            6.0G  141M  5.5G   3% /1lab42
+/dev/sdb43            6.0G  141M  5.5G   3% /1lab43
+/dev/sdb44            6.0G  141M  5.5G   3% /1lab44
+/dev/sdb45            6.0G  141M  5.5G   3% /1lab45
+/dev/sdb46            6.0G  141M  5.5G   3% /1lab46
+/dev/sdb47            6.0G  141M  5.5G   3% /1lab47
+/dev/sdb48            6.0G  141M  5.5G   3% /1lab48
+/dev/sdb49            6.0G  141M  5.5G   3% /1lab49
+/dev/sdb50            6.0G  141M  5.5G   3% /1lab50
+/dev/sdb51            6.0G  141M  5.5G   3% /1lab51
+/dev/sdb52            6.0G  141M  5.5G   3% /1lab52
+/dev/sdb53            6.0G  141M  5.5G   3% /1lab53
+/dev/sdb54            6.0G  141M  5.5G   3% /1lab54
+/dev/sdb55            6.0G  141M  5.5G   3% /1lab55
+/dev/sdb56            6.0G  141M  5.5G   3% /1lab56
+/dev/sdb57            6.0G  141M  5.5G   3% /1lab57
+/dev/sdb58            6.0G  141M  5.5G   3% /1lab58
+/dev/sdb59            6.0G  141M  5.5G   3% /1lab59
+/dev/sdb60            6.0G  141M  5.5G   3% /1lab60
+[root@vara-sys-22-01 1user1]# cd /tmp
+[root@vara-sys-22-01 tmp]# mkdir ajay
+[root@vara-sys-22-01 tmp]# cp /etc/group /tmp/ajay/
+[root@vara-sys-22-01 tmp]# cd ajay
+[root@vara-sys-22-01 ajay]# ls
+group
+[root@vara-sys-22-01 ajay]# cp /etc/group /tmp/ajay/^C
+[root@vara-sys-22-01 ajay]# cp /etc/passwd /tmp/ajay/
+[root@vara-sys-22-01 ajay]# cp /etc/shadow /tmp/ajay/
+[root@vara-sys-22-01 ajay]# cp /etc/login.defs /tmp/ajay/
+[root@vara-sys-22-01 ajay]# ls
+group  login.defs  passwd  shadow
+[root@vara-sys-22-01 ajay]# cp /tmp/ajay/* /1lab01/1user1/
+cp: target `/1lab01/1user1/' is not a directory
+[root@vara-sys-22-01 ajay]# cd /1lab01/1user1/
+-bash: cd: /1lab01/1user1/: No such file or directory
+[root@vara-sys-22-01 ajay]# cd /1lab01
+[root@vara-sys-22-01 1lab01]# ls
+lost+found
+[root@vara-sys-22-01 1lab01]# mkdir /1lab{01..60}/1user1
+mkdir: cannot create directory `/1lab04/1user1': File exists
+[root@vara-sys-22-01 1lab01]# cp /tmp/ajay/* /1lab01/1user1/
+[root@vara-sys-22-01 1lab01]# cd 1user1
+[root@vara-sys-22-01 1user1]# ls
+group  login.defs  passwd  shadow
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab01/1user1/
+[root@vara-sys-22-01 1user1]# ls -la
+total 36
+drwxr-xr-x 2 root root 4096 Feb  1 09:31 .
+drwxr-xr-x 4 root root 4096 Feb  1 09:29 ..
+-rw-r--r-- 1 root root   18 Feb  1 09:31 .bash_logout
+-rw-r--r-- 1 root root  176 Feb  1 09:31 .bash_profile
+-rw-r--r-- 1 root root  124 Feb  1 09:31 .bashrc
+-rw-r--r-- 1 root root  827 Feb  1 09:30 group
+-rw-r--r-- 1 root root 1475 Feb  1 09:30 login.defs
+-rw-r--r-- 1 root root 1694 Feb  1 09:30 passwd
+---------- 1 root root 1060 Feb  1 09:30 shadow
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab02/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab03/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab05/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab06/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab07/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab08/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab09/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab10/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab11/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab12/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab02/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab03/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab05/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab06/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab07/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab08/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab09/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab10/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab11/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab12/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab13/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab13/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab14/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab14/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab15/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab15/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab16/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab16/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab17/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab17/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab18/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab18/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab19/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab19/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab20/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab20/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab21/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab21/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab22/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab22/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab23/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab23/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab24/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab24/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab25/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab25/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab26/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab26/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab27/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab27/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab28/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab28/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab29/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab29/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab30/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab30/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab31/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab31/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab32/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab32/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab33/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab33/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab34/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab34/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab35/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab35/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab36/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab36/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab37/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab37/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab38/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab38/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab39/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab39/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab40/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab40/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab41/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab41/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab42/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab42/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab43/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab43/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab44/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab44/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab45/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab45/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab46/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab46/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab47/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab47/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab48/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab48/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab49/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab49/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab50/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab50/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab51/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab51/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab52/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab52/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab53/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab53/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab54/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab54/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab55/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab55/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab56/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab56/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab57/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab57/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab58/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab58/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab59/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab59/1user1/
+[root@vara-sys-22-01 1user1]# cp /tmp/ajay/* /1lab60/1user1/
+[root@vara-sys-22-01 1user1]# cp /etc/skel/.bash* /1lab60/1user1/
+[root@vara-sys-22-01 1user1]# cd /1lab60/1user1/
+[root@vara-sys-22-01 1user1]# ls -la
+total 36
+drwxr-xr-x 2 root root 4096 Feb  1 09:40 .
+drwxr-xr-x 4 root root 4096 Feb  1 09:29 ..
+-rw-r--r-- 1 root root   18 Feb  1 09:40 .bash_logout
+-rw-r--r-- 1 root root  176 Feb  1 09:40 .bash_profile
+-rw-r--r-- 1 root root  124 Feb  1 09:40 .bashrc
+-rw-r--r-- 1 root root  827 Feb  1 09:40 group
+-rw-r--r-- 1 root root 1475 Feb  1 09:40 login.defs
+-rw-r--r-- 1 root root 1694 Feb  1 09:40 passwd
+---------- 1 root root 1060 Feb  1 09:40 shadow
+[root@vara-sys-22-01 1user1]# lsblk
+NAME                     MAJ:MIN RM   SIZE RO MOUNTPOINT
+sdb                        8:16   0   423G  0
+├─sdb1                     8:17   0     6G  0 /1lab01
+├─sdb2                     8:18   0     6G  0 /1lab02
+├─sdb3                     8:19   0     6G  0 /1lab03
+├─sdb4                     8:20   0     1K  0
+├─sdb5                     8:21   0     6G  0 /1lab05
+├─sdb6                     8:22   0     6G  0 /1lab06
+├─sdb7                     8:23   0     6G  0 /1lab07
+├─sdb8                     8:24   0     6G  0 /1lab08
+├─sdb9                     8:25   0     6G  0 /1lab09
+├─sdb10                    8:26   0     6G  0 /1lab10
+├─sdb11                    8:27   0     6G  0 /1lab11
+├─sdb12                    8:28   0     6G  0 /1lab12
+├─sdb13                    8:29   0     6G  0 /1lab13
+├─sdb14                    8:30   0     6G  0 /1lab14
+├─sdb15                    8:31   0     6G  0 /1lab15
+├─sdb16                  259:0    0     6G  0 /1lab16
+├─sdb17                  259:1    0     6G  0 /1lab17
+├─sdb18                  259:2    0     6G  0 /1lab18
+├─sdb19                  259:3    0     6G  0 /1lab19
+├─sdb20                  259:4    0     6G  0 /1lab20
+├─sdb21                  259:5    0     6G  0 /1lab21
+├─sdb22                  259:6    0     6G  0 /1lab22
+├─sdb23                  259:7    0     6G  0 /1lab23
+├─sdb24                  259:8    0     6G  0 /1lab24
+├─sdb25                  259:9    0     6G  0 /1lab25
+├─sdb26                  259:10   0     6G  0 /1lab26
+├─sdb27                  259:11   0     6G  0 /1lab27
+├─sdb28                  259:12   0     6G  0 /1lab28
+├─sdb29                  259:13   0     6G  0 /1lab29
+├─sdb30                  259:14   0     6G  0 /1lab30
+├─sdb31                  259:15   0     6G  0 /1lab31
+├─sdb32                  259:16   0     6G  0 /1lab32
+├─sdb33                  259:17   0     6G  0 /1lab33
+├─sdb34                  259:18   0     6G  0 /1lab34
+├─sdb35                  259:19   0     6G  0 /1lab35
+├─sdb36                  259:20   0     6G  0 /1lab36
+├─sdb37                  259:21   0     6G  0 /1lab37
+├─sdb38                  259:22   0     6G  0 /1lab38
+├─sdb39                  259:23   0     6G  0 /1lab39
+├─sdb40                  259:24   0     6G  0 /1lab40
+├─sdb41                  259:25   0     6G  0 /1lab41
+├─sdb42                  259:26   0     6G  0 /1lab42
+├─sdb43                  259:27   0     6G  0 /1lab43
+├─sdb44                  259:28   0     6G  0 /1lab44
+├─sdb45                  259:29   0     6G  0 /1lab45
+├─sdb46                  259:30   0     6G  0 /1lab46
+├─sdb47                  259:31   0     6G  0 /1lab47
+├─sdb48                  259:32   0     6G  0 /1lab48
+├─sdb49                  259:33   0     6G  0 /1lab49
+├─sdb50                  259:34   0     6G  0 /1lab50
+├─sdb51                  259:35   0     6G  0 /1lab51
+├─sdb52                  259:36   0     6G  0 /1lab52
+├─sdb53                  259:37   0     6G  0 /1lab53
+├─sdb54                  259:38   0     6G  0 /1lab54
+├─sdb55                  259:39   0     6G  0 /1lab55
+├─sdb56                  259:40   0     6G  0 /1lab56
+├─sdb57                  259:41   0     6G  0 /1lab57
+├─sdb58                  259:42   0     6G  0 /1lab58
+├─sdb59                  259:43   0     6G  0 /1lab59
+└─sdb60                  259:44   0     6G  0 /1lab60
+sda                        8:0    0   122G  0
+├─sda1                     8:1    0   512M  0 /boot
+└─sda2                     8:2    0 121.5G  0
+  ├─rootvg-swaplv (dm-0) 253:0    0   8.5G  0 [SWAP]
+  ├─rootvg-rootlv (dm-1) 253:1    0    63G  0 /
+  ├─rootvg-homelv (dm-2) 253:2    0    10G  0 /home
+  ├─rootvg-varlv (dm-3)  253:3    0    10G  0 /var
+  ├─rootvg-optlv (dm-4)  253:4    0    10G  0 /opt
+  ├─rootvg-tmplv (dm-5)  253:5    0    10G  0 /tmp
+  └─rootvg-u01lv (dm-6)  253:6    0    10G  0 /u01
+sdd                        8:48   0     3G  0
+sdc                        8:32   0   421G  0
+sr0                       11:0    1   3.4G  0
+[root@vara-sys-22-01 1user1]# fdisk /dev/sdc
+Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
+Building a new DOS disklabel with disk identifier 0x03a0e593.
+Changes will remain in memory only, until you decide to write them.
+After that, of course, the previous content won't be recoverable.
+
+Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
+
+WARNING: DOS-compatible mode is deprecated. It's strongly recommended to
+         switch off the mode (command 'c') and change display units to
+         sectors (command 'u').
+
+Command (m for help): n
+Command action
+   e   extended
+   p   primary partition (1-4)
+p
+Partition number (1-4): 1
+First cylinder (1-54958, default 1):
+Using default value 1
+Last cylinder, +cylinders or +size{K,M,G} (1-54958, default 54958): +30G
+
+Command (m for help): t
+Selected partition 1
+Hex code (type L to list codes): 82
+Changed system type of partition 1 to 82 (Linux swap / Solaris)
+
+Command (m for help): n
+Command action
+   e   extended
+   p   primary partition (1-4)
+p
+Partition number (1-4): 2
+First cylinder (3918-54958, default 3918):
+Using default value 3918
+Last cylinder, +cylinders or +size{K,M,G} (3918-54958, default 54958): +30G
+
+Command (m for help): t
+Partition number (1-4): 2
+Hex code (type L to list codes): 82
+Changed system type of partition 2 to 82 (Linux swap / Solaris)
+
+Command (m for help): n
+Command action
+   e   extended
+   p   primary partition (1-4)
+p
+Partition number (1-4): 3
+First cylinder (7835-54958, default 7835):
+Using default value 7835
+Last cylinder, +cylinders or +size{K,M,G} (7835-54958, default 54958): +30G
+
+Command (m for help): t
+Partition number (1-4): 3
+Hex code (type L to list codes): 82
+Changed system type of partition 3 to 82 (Linux swap / Solaris)
+
+Command (m for help): n
+Command action
+   e   extended
+   p   primary partition (1-4)
+e
+Selected partition 4
+First cylinder (11752-54958, default 11752):
+Using default value 11752
+Last cylinder, +cylinders or +size{K,M,G} (11752-54958, default 54958):
+Using default value 54958
+
+Command (m for help): n
+First cylinder (11752-54958, default 11752):
+Using default value 11752
+Last cylinder, +cylinders or +size{K,M,G} (11752-54958, default 54958): +30G
+
+Command (m for help): t
+Partition number (1-5): 5
+Hex code (type L to list codes): 82
+Changed system type of partition 5 to 82 (Linux swap / Solaris)
+
+Command (m for help): t
+Partition number (1-5): 5
+Hex code (type L to list codes): 82
+
+Command (m for help): n
+First cylinder (15669-54958, default 15669):
+Using default value 15669
+Last cylinder, +cylinders or +size{K,M,G} (15669-54958, default 54958): +30G
+
+Command (m for help): t
+Partition number (1-6): 6
+Hex code (type L to list codes): 82
+Changed system type of partition 6 to 82 (Linux swap / Solaris)
+
+Command (m for help): n
+First cylinder (19586-54958, default 19586):
+Using default value 19586
+Last cylinder, +cylinders or +size{K,M,G} (19586-54958, default 54958): +30G
+
+Command (m for help): t
+Partition number (1-7): 7
+Hex code (type L to list codes): 82
+Changed system type of partition 7 to 82 (Linux swap / Solaris)
+
+Command (m for help): n
+First cylinder (23503-54958, default 23503):
+Using default value 23503
+Last cylinder, +cylinders or +size{K,M,G} (23503-54958, default 54958): +30G
+
+Command (m for help): t
+Partition number (1-8): 8
+Hex code (type L to list codes): 82
+Changed system type of partition 8 to 82 (Linux swap / Solaris)
+
+Command (m for help): n
+First cylinder (27420-54958, default 27420):
+Using default value 27420
+Last cylinder, +cylinders or +size{K,M,G} (27420-54958, default 54958): +30G
+
+Command (m for help): t
+Partition number (1-9): 9
+Hex code (type L to list codes): 82
+Changed system type of partition 9 to 82 (Linux swap / Solaris)
+
+Command (m for help): n
+First cylinder (31337-54958, default 31337):
+Using default value 31337
+Last cylinder, +cylinders or +size{K,M,G} (31337-54958, default 54958): +30G
+
+Command (m for help): t
+Partition number (1-10): 10
+Hex code (type L to list codes): 82
+Changed system type of partition 10 to 82 (Linux swap / Solaris)
+
+Command (m for help): n
+First cylinder (35254-54958, default 35254):
+Using default value 35254
+Last cylinder, +cylinders or +size{K,M,G} (35254-54958, default 54958): +30G
+
+Command (m for help): t
+Partition number (1-11): 11
+Hex code (type L to list codes): 82
+Changed system type of partition 11 to 82 (Linux swap / Solaris)
+
+Command (m for help): n
+First cylinder (39171-54958, default 39171):
+Using default value 39171
+Last cylinder, +cylinders or +size{K,M,G} (39171-54958, default 54958): +30G
+
+Command (m for help): t
+Partition number (1-12): 12
+Hex code (type L to list codes): 82
+Changed system type of partition 12 to 82 (Linux swap / Solaris)
+
+Command (m for help): n
+First cylinder (43088-54958, default 43088):
+Using default value 43088
+Last cylinder, +cylinders or +size{K,M,G} (43088-54958, default 54958): +30G
+
+Command (m for help): t
+Partition number (1-13): 13
+Hex code (type L to list codes): 82
+Changed system type of partition 13 to 82 (Linux swap / Solaris)
+
+Command (m for help): n
+First cylinder (47005-54958, default 47005):
+Using default value 47005
+Last cylinder, +cylinders or +size{K,M,G} (47005-54958, default 54958): +30G
+
+Command (m for help): t
+Partition number (1-14): 14
+Hex code (type L to list codes): 82
+Changed system type of partition 14 to 82 (Linux swap / Solaris)
+
+Command (m for help): p
+
+Disk /dev/sdc: 452.0 GB, 452045307904 bytes
+255 heads, 63 sectors/track, 54958 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x03a0e593
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdc1               1        3917    31463271   82  Linux swap / Solaris
+/dev/sdc2            3918        7834    31463302+  82  Linux swap / Solaris
+/dev/sdc3            7835       11751    31463302+  82  Linux swap / Solaris
+/dev/sdc4           11752       54958   347060227+   5  Extended
+/dev/sdc5           11752       15668    31463271   82  Linux swap / Solaris
+/dev/sdc6           15669       19585    31463271   82  Linux swap / Solaris
+/dev/sdc7           19586       23502    31463271   82  Linux swap / Solaris
+/dev/sdc8           23503       27419    31463271   82  Linux swap / Solaris
+/dev/sdc9           27420       31336    31463271   82  Linux swap / Solaris
+/dev/sdc10          31337       35253    31463271   82  Linux swap / Solaris
+/dev/sdc11          35254       39170    31463271   82  Linux swap / Solaris
+/dev/sdc12          39171       43087    31463271   82  Linux swap / Solaris
+/dev/sdc13          43088       47004    31463271   82  Linux swap / Solaris
+/dev/sdc14          47005       50921    31463271   82  Linux swap / Solaris
+
+Command (m for help): n
+First cylinder (50922-54958, default 50922):
+Using default value 50922
+Last cylinder, +cylinders or +size{K,M,G} (50922-54958, default 54958): +30G
+
+Command (m for help): t
+Partition number (1-15): 15
+Hex code (type L to list codes):
+Hex code (type L to list codes): 82
+Changed system type of partition 15 to 82 (Linux swap / Solaris)
+
+Command (m for help): p
+
+Disk /dev/sdc: 452.0 GB, 452045307904 bytes
+255 heads, 63 sectors/track, 54958 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x03a0e593
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdc1               1        3917    31463271   82  Linux swap / Solaris
+/dev/sdc2            3918        7834    31463302+  82  Linux swap / Solaris
+/dev/sdc3            7835       11751    31463302+  82  Linux swap / Solaris
+/dev/sdc4           11752       54958   347060227+   5  Extended
+/dev/sdc5           11752       15668    31463271   82  Linux swap / Solaris
+/dev/sdc6           15669       19585    31463271   82  Linux swap / Solaris
+/dev/sdc7           19586       23502    31463271   82  Linux swap / Solaris
+/dev/sdc8           23503       27419    31463271   82  Linux swap / Solaris
+/dev/sdc9           27420       31336    31463271   82  Linux swap / Solaris
+/dev/sdc10          31337       35253    31463271   82  Linux swap / Solaris
+/dev/sdc11          35254       39170    31463271   82  Linux swap / Solaris
+/dev/sdc12          39171       43087    31463271   82  Linux swap / Solaris
+/dev/sdc13          43088       47004    31463271   82  Linux swap / Solaris
+/dev/sdc14          47005       50921    31463271   82  Linux swap / Solaris
+/dev/sdc15          50922       54838    31463271   82  Linux swap / Solaris
+
+Command (m for help): w
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+Syncing disks.
+[root@vara-sys-22-01 1user1]# mkswap /dev/sdc1
+Setting up swapspace version 1, size = 31463264 KiB
+no label, UUID=55d6584b-150e-49f9-a115-441fcd23278d
+[root@vara-sys-22-01 1user1]# mkswap /dev/sdc2
+Setting up swapspace version 1, size = 31463296 KiB
+no label, UUID=eb3abd2f-1d00-477b-a83e-5eb309363545
+[root@vara-sys-22-01 1user1]# mkswap /dev/sdc3
+Setting up swapspace version 1, size = 31463296 KiB
+no label, UUID=264e507f-333e-4ce8-acf6-f1465a2a1dc8
+[root@vara-sys-22-01 1user1]# mkswap /dev/sdc4
+mkswap: error: swap area needs to be at least 40 KiB
+Usage: mkswap [-c] [-pPAGESZ] [-L label] [-U UUID] /dev/name [blocks]
+[root@vara-sys-22-01 1user1]# mkswap /dev/sdc5
+Setting up swapspace version 1, size = 31463264 KiB
+no label, UUID=08fab57e-0263-4872-a7a3-4ea82f48289f
+[root@vara-sys-22-01 1user1]# mkswap /dev/sdc6
+Setting up swapspace version 1, size = 31463264 KiB
+no label, UUID=111d678a-c043-4f45-9cb4-21c237ee4bc1
+[root@vara-sys-22-01 1user1]# mkswap /dev/sdc7
+Setting up swapspace version 1, size = 31463264 KiB
+no label, UUID=a773fe93-f44b-4048-bab3-0225f586cf78
+[root@vara-sys-22-01 1user1]# mkswap /dev/sdc8
+Setting up swapspace version 1, size = 31463264 KiB
+no label, UUID=94a6ab2b-5a49-403f-82a5-9d669307342c
+[root@vara-sys-22-01 1user1]# mkswap /dev/sdc9
+Setting up swapspace version 1, size = 31463264 KiB
+no label, UUID=d438afd0-b186-4a2c-a2a0-6a85e1619959
+[root@vara-sys-22-01 1user1]# mkswap /dev/sdc10
+Setting up swapspace version 1, size = 31463264 KiB
+no label, UUID=f24c52a4-5732-4f1b-82cf-dc13a09b0dfb
+[root@vara-sys-22-01 1user1]# mkswap /dev/sdc11
+Setting up swapspace version 1, size = 31463264 KiB
+no label, UUID=8b5e71c2-1c90-4d5c-b4ad-7275551bf771
+[root@vara-sys-22-01 1user1]# mkswap /dev/sdc12
+Setting up swapspace version 1, size = 31463264 KiB
+no label, UUID=62053fbc-07c6-4db1-9d5a-0112e4e82b42
+[root@vara-sys-22-01 1user1]# mkswap /dev/sdc13
+Setting up swapspace version 1, size = 31463264 KiB
+no label, UUID=9f1aad2e-c2d4-431b-8239-742628bd5d59
+[root@vara-sys-22-01 1user1]# mkswap /dev/sdc14
+Setting up swapspace version 1, size = 31463264 KiB
+no label, UUID=86f57b7b-8eb0-4b72-a77b-f36d092e869f
+[root@vara-sys-22-01 1user1]# mkswap /dev/sdc15
+Setting up swapspace version 1, size = 31463264 KiB
+no label, UUID=bf9addb5-fd12-4eb3-99b4-a3f58340ce8f
+[root@vara-sys-22-01 1user1]# swapon /dev/sdc1
+[root@vara-sys-22-01 1user1]# swapon /dev/sdc2
+[root@vara-sys-22-01 1user1]# swapon /dev/sdc3
+[root@vara-sys-22-01 1user1]# swapon /dev/sdc5
+[root@vara-sys-22-01 1user1]# swapon /dev/sdc6
+[root@vara-sys-22-01 1user1]# swapon /dev/sdc7
+[root@vara-sys-22-01 1user1]# swapon /dev/sdc8
+[root@vara-sys-22-01 1user1]# swapon /dev/sdc9
+[root@vara-sys-22-01 1user1]# swapon /dev/sdc10
+[root@vara-sys-22-01 1user1]# swapon /dev/sdc11
+[root@vara-sys-22-01 1user1]# swapon /dev/sdc12
+[root@vara-sys-22-01 1user1]# swapon /dev/sdc13
+[root@vara-sys-22-01 1user1]# swapon /dev/sdc14
+[root@vara-sys-22-01 1user1]# swapon /dev/sdc15
+[root@vara-sys-22-01 1user1]# vi /etc/fstab
+[root@vara-sys-22-01 1user1]# swapon -a
+swapon: /dev/mapper/rootvg-swaplv: swapon failed: Device or resource busy
+[root@vara-sys-22-01 1user1]# swapon -s
+Filename                                Type            Size    Used    Priority
+/dev/dm-0                               partition       8908792 0       -1
+/dev/sdc1                               partition       31463260        0       -2
+/dev/sdc2                               partition       31463292        0       -3
+/dev/sdc3                               partition       31463292        0       -4
+/dev/sdc5                               partition       31463260        0       -5
+/dev/sdc6                               partition       31463260        0       -6
+/dev/sdc7                               partition       31463260        0       -7
+/dev/sdc8                               partition       31463260        0       -8
+/dev/sdc9                               partition       31463260        0       -9
+/dev/sdc10                              partition       31463260        0       -10
+/dev/sdc11                              partition       31463260        0       -11
+/dev/sdc12                              partition       31463260        0       -12
+/dev/sdc13                              partition       31463260        0       -13
+/dev/sdc14                              partition       31463260        0       -14
+/dev/sdc15                              partition       31463260        0       -15
+[root@vara-sys-22-01 1user1]# lsblk
+NAME                     MAJ:MIN RM   SIZE RO MOUNTPOINT
+sdb                        8:16   0   423G  0
+├─sdb1                     8:17   0     6G  0 /1lab01
+├─sdb2                     8:18   0     6G  0 /1lab02
+├─sdb3                     8:19   0     6G  0 /1lab03
+├─sdb4                     8:20   0     1K  0
+├─sdb5                     8:21   0     6G  0 /1lab05
+├─sdb6                     8:22   0     6G  0 /1lab06
+├─sdb7                     8:23   0     6G  0 /1lab07
+├─sdb8                     8:24   0     6G  0 /1lab08
+├─sdb9                     8:25   0     6G  0 /1lab09
+├─sdb10                    8:26   0     6G  0 /1lab10
+├─sdb11                    8:27   0     6G  0 /1lab11
+├─sdb12                    8:28   0     6G  0 /1lab12
+├─sdb13                    8:29   0     6G  0 /1lab13
+├─sdb14                    8:30   0     6G  0 /1lab14
+├─sdb15                    8:31   0     6G  0 /1lab15
+├─sdb16                  259:0    0     6G  0 /1lab16
+├─sdb17                  259:1    0     6G  0 /1lab17
+├─sdb18                  259:2    0     6G  0 /1lab18
+├─sdb19                  259:3    0     6G  0 /1lab19
+├─sdb20                  259:4    0     6G  0 /1lab20
+├─sdb21                  259:5    0     6G  0 /1lab21
+├─sdb22                  259:6    0     6G  0 /1lab22
+├─sdb23                  259:7    0     6G  0 /1lab23
+├─sdb24                  259:8    0     6G  0 /1lab24
+├─sdb25                  259:9    0     6G  0 /1lab25
+├─sdb26                  259:10   0     6G  0 /1lab26
+├─sdb27                  259:11   0     6G  0 /1lab27
+├─sdb28                  259:12   0     6G  0 /1lab28
+├─sdb29                  259:13   0     6G  0 /1lab29
+├─sdb30                  259:14   0     6G  0 /1lab30
+├─sdb31                  259:15   0     6G  0 /1lab31
+├─sdb32                  259:16   0     6G  0 /1lab32
+├─sdb33                  259:17   0     6G  0 /1lab33
+├─sdb34                  259:18   0     6G  0 /1lab34
+├─sdb35                  259:19   0     6G  0 /1lab35
+├─sdb36                  259:20   0     6G  0 /1lab36
+├─sdb37                  259:21   0     6G  0 /1lab37
+├─sdb38                  259:22   0     6G  0 /1lab38
+├─sdb39                  259:23   0     6G  0 /1lab39
+├─sdb40                  259:24   0     6G  0 /1lab40
+├─sdb41                  259:25   0     6G  0 /1lab41
+├─sdb42                  259:26   0     6G  0 /1lab42
+├─sdb43                  259:27   0     6G  0 /1lab43
+├─sdb44                  259:28   0     6G  0 /1lab44
+├─sdb45                  259:29   0     6G  0 /1lab45
+├─sdb46                  259:30   0     6G  0 /1lab46
+├─sdb47                  259:31   0     6G  0 /1lab47
+├─sdb48                  259:32   0     6G  0 /1lab48
+├─sdb49                  259:33   0     6G  0 /1lab49
+├─sdb50                  259:34   0     6G  0 /1lab50
+├─sdb51                  259:35   0     6G  0 /1lab51
+├─sdb52                  259:36   0     6G  0 /1lab52
+├─sdb53                  259:37   0     6G  0 /1lab53
+├─sdb54                  259:38   0     6G  0 /1lab54
+├─sdb55                  259:39   0     6G  0 /1lab55
+├─sdb56                  259:40   0     6G  0 /1lab56
+├─sdb57                  259:41   0     6G  0 /1lab57
+├─sdb58                  259:42   0     6G  0 /1lab58
+├─sdb59                  259:43   0     6G  0 /1lab59
+└─sdb60                  259:44   0     6G  0 /1lab60
+sda                        8:0    0   122G  0
+├─sda1                     8:1    0   512M  0 /boot
+└─sda2                     8:2    0 121.5G  0
+  ├─rootvg-swaplv (dm-0) 253:0    0   8.5G  0 [SWAP]
+  ├─rootvg-rootlv (dm-1) 253:1    0    63G  0 /
+  ├─rootvg-homelv (dm-2) 253:2    0    10G  0 /home
+  ├─rootvg-varlv (dm-3)  253:3    0    10G  0 /var
+  ├─rootvg-optlv (dm-4)  253:4    0    10G  0 /opt
+  ├─rootvg-tmplv (dm-5)  253:5    0    10G  0 /tmp
+  └─rootvg-u01lv (dm-6)  253:6    0    10G  0 /u01
+sdd                        8:48   0     3G  0
+sdc                        8:32   0   421G  0
+├─sdc1                     8:33   0    30G  0 [SWAP]
+├─sdc2                     8:34   0    30G  0 [SWAP]
+├─sdc3                     8:35   0    30G  0 [SWAP]
+├─sdc4                     8:36   0     1K  0
+├─sdc5                     8:37   0    30G  0 [SWAP]
+├─sdc6                     8:38   0    30G  0 [SWAP]
+├─sdc7                     8:39   0    30G  0 [SWAP]
+├─sdc8                     8:40   0    30G  0 [SWAP]
+├─sdc9                     8:41   0    30G  0 [SWAP]
+├─sdc10                    8:42   0    30G  0 [SWAP]
+├─sdc11                    8:43   0    30G  0 [SWAP]
+├─sdc12                    8:44   0    30G  0 [SWAP]
+├─sdc13                    8:45   0    30G  0 [SWAP]
+├─sdc14                    8:46   0    30G  0 [SWAP]
+└─sdc15                    8:47   0    30G  0 [SWAP]
+sr0                       11:0    1   3.4G  0
+[root@vara-sys-22-01 1user1]# mkfs -t ext4 /dev/sdd
+mke2fs 1.41.12 (17-May-2010)
+/dev/sdd is entire device, not just one partition!
+Proceed anyway? (y,n) y
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+196608 inodes, 786432 blocks
+39321 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=805306368
+24 block groups
+32768 blocks per group, 32768 fragments per group
+8192 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912
+
+Writing inode tables: done
+Creating journal (16384 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 25 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+[root@vara-sys-22-01 1user1]# mkdir /task1
+[root@vara-sys-22-01 1user1]# mount -t ext4 /dev/sdd /task1
+[root@vara-sys-22-01 1user1]# vi /etc/fstab
+[root@vara-sys-22-01 1user1]# df -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/rootvg-rootlv
+                       63G  2.5G   57G   5% /
+tmpfs                 2.0G   88K  2.0G   1% /dev/shm
+/dev/sda1             504M   42M  437M   9% /boot
+/dev/mapper/rootvg-homelv
+                      9.9G  151M  9.2G   2% /home
+/dev/mapper/rootvg-optlv
+                      9.9G  151M  9.2G   2% /opt
+/dev/mapper/rootvg-tmplv
+                      9.9G  151M  9.2G   2% /tmp
+/dev/mapper/rootvg-u01lv
+                      9.9G  151M  9.2G   2% /u01
+/dev/mapper/rootvg-varlv
+                      9.9G  231M  9.2G   3% /var
+/dev/sdb1             6.0G  141M  5.5G   3% /1lab01
+/dev/sdb2             6.0G  141M  5.5G   3% /1lab02
+/dev/sdb3             6.0G  141M  5.5G   3% /1lab03
+/dev/sdb5             6.0G  141M  5.5G   3% /1lab05
+/dev/sdb6             6.0G  141M  5.5G   3% /1lab06
+/dev/sdb7             6.0G  141M  5.5G   3% /1lab07
+/dev/sdb8             6.0G  141M  5.5G   3% /1lab08
+/dev/sdb9             6.0G  141M  5.5G   3% /1lab09
+/dev/sdb10            6.0G  141M  5.5G   3% /1lab10
+/dev/sdb11            6.0G  141M  5.5G   3% /1lab11
+/dev/sdb12            6.0G  141M  5.5G   3% /1lab12
+/dev/sdb13            6.0G  141M  5.5G   3% /1lab13
+/dev/sdb14            6.0G  141M  5.5G   3% /1lab14
+/dev/sdb15            6.0G  141M  5.5G   3% /1lab15
+/dev/sdb16            6.0G  141M  5.5G   3% /1lab16
+/dev/sdb17            6.0G  141M  5.5G   3% /1lab17
+/dev/sdb18            6.0G  141M  5.5G   3% /1lab18
+/dev/sdb19            6.0G  141M  5.5G   3% /1lab19
+/dev/sdb20            6.0G  141M  5.5G   3% /1lab20
+/dev/sdb21            6.0G  141M  5.5G   3% /1lab21
+/dev/sdb22            6.0G  141M  5.5G   3% /1lab22
+/dev/sdb23            6.0G  141M  5.5G   3% /1lab23
+/dev/sdb24            6.0G  141M  5.5G   3% /1lab24
+/dev/sdb25            6.0G  141M  5.5G   3% /1lab25
+/dev/sdb26            6.0G  141M  5.5G   3% /1lab26
+/dev/sdb27            6.0G  141M  5.5G   3% /1lab27
+/dev/sdb28            6.0G  141M  5.5G   3% /1lab28
+/dev/sdb29            6.0G  141M  5.5G   3% /1lab29
+/dev/sdb30            6.0G  141M  5.5G   3% /1lab30
+/dev/sdb31            6.0G  141M  5.5G   3% /1lab31
+/dev/sdb32            6.0G  141M  5.5G   3% /1lab32
+/dev/sdb33            6.0G  141M  5.5G   3% /1lab33
+/dev/sdb34            6.0G  141M  5.5G   3% /1lab34
+/dev/sdb35            6.0G  141M  5.5G   3% /1lab35
+/dev/sdb36            6.0G  141M  5.5G   3% /1lab36
+/dev/sdb37            6.0G  141M  5.5G   3% /1lab37
+/dev/sdb38            6.0G  141M  5.5G   3% /1lab38
+/dev/sdb39            6.0G  141M  5.5G   3% /1lab39
+/dev/sdb40            6.0G  141M  5.5G   3% /1lab40
+/dev/sdb41            6.0G  141M  5.5G   3% /1lab41
+/dev/sdb42            6.0G  141M  5.5G   3% /1lab42
+/dev/sdb43            6.0G  141M  5.5G   3% /1lab43
+/dev/sdb44            6.0G  141M  5.5G   3% /1lab44
+/dev/sdb45            6.0G  141M  5.5G   3% /1lab45
+/dev/sdb46            6.0G  141M  5.5G   3% /1lab46
+/dev/sdb47            6.0G  141M  5.5G   3% /1lab47
+/dev/sdb48            6.0G  141M  5.5G   3% /1lab48
+/dev/sdb49            6.0G  141M  5.5G   3% /1lab49
+/dev/sdb50            6.0G  141M  5.5G   3% /1lab50
+/dev/sdb51            6.0G  141M  5.5G   3% /1lab51
+/dev/sdb52            6.0G  141M  5.5G   3% /1lab52
+/dev/sdb53            6.0G  141M  5.5G   3% /1lab53
+/dev/sdb54            6.0G  141M  5.5G   3% /1lab54
+/dev/sdb55            6.0G  141M  5.5G   3% /1lab55
+/dev/sdb56            6.0G  141M  5.5G   3% /1lab56
+/dev/sdb57            6.0G  141M  5.5G   3% /1lab57
+/dev/sdb58            6.0G  141M  5.5G   3% /1lab58
+/dev/sdb59            6.0G  141M  5.5G   3% /1lab59
+/dev/sdb60            6.0G  141M  5.5G   3% /1lab60
+/dev/sdd              3.0G   69M  2.8G   3% /task1
+[root@vara-sys-22-01 1user1]# dd if=/dev/zero of=/task1/swapf1 bs=M count=130
+130+0 records in
+130+0 records out
+136314880 bytes (136 MB) copied, 0.116487 s, 1.2 GB/s
+[root@vara-sys-22-01 1user1]# dd if=/dev/zero of=/task1/swapf2 bs=M count=130
+130+0 records in
+130+0 records out
+136314880 bytes (136 MB) copied, 0.445476 s, 306 MB/s
+[root@vara-sys-22-01 1user1]# dd if=/dev/zero of=/task1/swapf3 bs=M count=130
+130+0 records in
+130+0 records out
+136314880 bytes (136 MB) copied, 0.181871 s, 750 MB/s
+[root@vara-sys-22-01 1user1]# dd if=/dev/zero of=/task1/swapf4 bs=M count=130
+130+0 records in
+130+0 records out
+136314880 bytes (136 MB) copied, 0.257735 s, 529 MB/s
+[root@vara-sys-22-01 1user1]# dd if=/dev/zero of=/task1/swapf5 bs=M count=130
+130+0 records in
+130+0 records out
+136314880 bytes (136 MB) copied, 0.2353 s, 579 MB/s
+[root@vara-sys-22-01 1user1]# dd if=/dev/zero of=/task1/swapf6 bs=M count=130
+130+0 records in
+130+0 records out
+136314880 bytes (136 MB) copied, 0.146823 s, 928 MB/s
+[root@vara-sys-22-01 1user1]# dd if=/dev/zero of=/task1/swapf7 bs=M count=130
+130+0 records in
+130+0 records out
+136314880 bytes (136 MB) copied, 0.16285 s, 837 MB/s
+[root@vara-sys-22-01 1user1]# dd if=/dev/zero of=/task1/swapf8 bs=M count=130
+130+0 records in
+130+0 records out
+136314880 bytes (136 MB) copied, 0.235958 s, 578 MB/s
+[root@vara-sys-22-01 1user1]# dd if=/dev/zero of=/task1/swapf9 bs=M count=130
+130+0 records in
+130+0 records out
+136314880 bytes (136 MB) copied, 0.228326 s, 597 MB/s
+[root@vara-sys-22-01 1user1]# dd if=/dev/zero of=/task1/swapf10 bs=M count=130
+130+0 records in
+130+0 records out
+136314880 bytes (136 MB) copied, 0.147969 s, 921 MB/s
+[root@vara-sys-22-01 1user1]# dd if=/dev/zero of=/task1/swapf11 bs=M count=130
+130+0 records in
+130+0 records out
+136314880 bytes (136 MB) copied, 0.157677 s, 865 MB/s
+[root@vara-sys-22-01 1user1]# dd if=/dev/zero of=/task1/swapf12 bs=M count=130
+130+0 records in
+130+0 records out
+136314880 bytes (136 MB) copied, 0.225617 s, 604 MB/s
+[root@vara-sys-22-01 1user1]# dd if=/dev/zero of=/task1/swapf13 bs=M count=130
+130+0 records in
+130+0 records out
+136314880 bytes (136 MB) copied, 0.276955 s, 492 MB/s
+[root@vara-sys-22-01 1user1]# dd if=/dev/zero of=/task1/swapf14 bs=M count=130
+130+0 records in
+130+0 records out
+136314880 bytes (136 MB) copied, 0.151927 s, 897 MB/s
+[root@vara-sys-22-01 1user1]# cd /task1
+[root@vara-sys-22-01 task1]# ls
+lost+found  swapf10  swapf12  swapf14  swapf3  swapf5  swapf7  swapf9
+swapf1      swapf11  swapf13  swapf2   swapf4  swapf6  swapf8
+[root@vara-sys-22-01 task1]# vi /etc/fstab
+[root@vara-sys-22-01 task1]# mkswap /task1/swapf1
+Setting up swapspace version 1, size = 133116 KiB
+no label, UUID=8b8d6a1f-5e5f-4dcd-bc30-37521893f571
+[root@vara-sys-22-01 task1]# mkswap /task1/swapf2
+Setting up swapspace version 1, size = 133116 KiB
+no label, UUID=aeab7a96-6e49-42eb-8bfc-a516202e498f
+[root@vara-sys-22-01 task1]# mkswap /task1/swapf3
+Setting up swapspace version 1, size = 133116 KiB
+no label, UUID=f01d8457-6d05-4eef-a12b-379ec4df555c
+[root@vara-sys-22-01 task1]# mkswap /task1/swapf4
+Setting up swapspace version 1, size = 133116 KiB
+no label, UUID=355904f7-b504-4af3-8a33-edccdc8ac62c
+[root@vara-sys-22-01 task1]# mkswap /task1/swapf5
+Setting up swapspace version 1, size = 133116 KiB
+no label, UUID=b2cf4511-cb8e-4952-ab14-bcc90e3f09c0
+[root@vara-sys-22-01 task1]# mkswap /task1/swapf6
+Setting up swapspace version 1, size = 133116 KiB
+no label, UUID=96848a55-dcad-4ae7-bd84-e240b7ab3c8c
+[root@vara-sys-22-01 task1]# mkswap /task1/swapf7
+Setting up swapspace version 1, size = 133116 KiB
+no label, UUID=f6121ebf-5a4f-4de9-8e80-6edbcca7c86e
+[root@vara-sys-22-01 task1]# mkswap /task1/swapf8
+Setting up swapspace version 1, size = 133116 KiB
+no label, UUID=a86f28b2-57c6-4747-853a-f29321525d11
+[root@vara-sys-22-01 task1]# mkswap /task1/swapf9
+Setting up swapspace version 1, size = 133116 KiB
+no label, UUID=41349a67-dbeb-4b72-9164-913c77dd0c73
+[root@vara-sys-22-01 task1]# mkswap /task1/swapf10
+Setting up swapspace version 1, size = 133116 KiB
+no label, UUID=4fd76035-cc97-42f3-a765-2e7fc559ffa0
+[root@vara-sys-22-01 task1]# mkswap /task1/swapf11
+Setting up swapspace version 1, size = 133116 KiB
+no label, UUID=1c2e9ff6-e138-46f8-a844-260935b405ca
+[root@vara-sys-22-01 task1]# mkswap /task1/swapf12
+Setting up swapspace version 1, size = 133116 KiB
+no label, UUID=9315ff9a-00d8-456d-b3f3-ffd4cb1bee17
+[root@vara-sys-22-01 task1]# mkswap /task1/swapf13
+Setting up swapspace version 1, size = 133116 KiB
+no label, UUID=00059266-798e-416a-9a84-6b885cdcfa5b
+[root@vara-sys-22-01 task1]# mkswap /task1/swapf14
+Setting up swapspace version 1, size = 133116 KiB
+no label, UUID=cbe2a3ec-d74c-4944-99d9-adb8ab5e1f96
+[root@vara-sys-22-01 task1]# swapon /task1/swapf1
+[root@vara-sys-22-01 task1]# swapon /task1/swapf2
+[root@vara-sys-22-01 task1]# swapon /task1/swapf3
+[root@vara-sys-22-01 task1]# swapon /task1/swapf4
+[root@vara-sys-22-01 task1]# swapon /task1/swapf5
+[root@vara-sys-22-01 task1]# swapon /task1/swapf6
+[root@vara-sys-22-01 task1]# swapon /task1/swapf7
+[root@vara-sys-22-01 task1]# swapon /task1/swapf8
+[root@vara-sys-22-01 task1]# swapon /task1/swapf9
+[root@vara-sys-22-01 task1]# swapon /task1/swapf10
+[root@vara-sys-22-01 task1]# swapon /task1/swapf11
+[root@vara-sys-22-01 task1]# swapon /task1/swapf12
+[root@vara-sys-22-01 task1]# swapon /task1/swapf13
+[root@vara-sys-22-01 task1]# swapon /task1/swapf14
+[root@vara-sys-22-01 task1]# swapon -s
+Filename                                Type            Size    Used    Priority
+/dev/dm-0                               partition       8908792 0       -1
+/dev/sdc1                               partition       31463260        0       -2
+/dev/sdc2                               partition       31463292        0       -3
+/dev/sdc3                               partition       31463292        0       -4
+/dev/sdc5                               partition       31463260        0       -5
+/dev/sdc6                               partition       31463260        0       -6
+/dev/sdc7                               partition       31463260        0       -7
+/dev/sdc8                               partition       31463260        0       -8
+/dev/sdc9                               partition       31463260        0       -9
+/dev/sdc10                              partition       31463260        0       -10
+/dev/sdc11                              partition       31463260        0       -11
+/dev/sdc12                              partition       31463260        0       -12
+/dev/sdc13                              partition       31463260        0       -13
+/dev/sdc14                              partition       31463260        0       -14
+/dev/sdc15                              partition       31463260        0       -15
+/task1/swapf1                           file            133112  0       -16
+/task1/swapf2                           file            133112  0       -17
+/task1/swapf3                           file            133112  0       -18
+/task1/swapf4                           file            133112  0       -19
+/task1/swapf5                           file            133112  0       -20
+/task1/swapf6                           file            133112  0       -21
+/task1/swapf7                           file            133112  0       -22
+/task1/swapf8                           file            133112  0       -23
+/task1/swapf9                           file            133112  0       -24
+/task1/swapf10                          file            133112  0       -25
+/task1/swapf11                          file            133112  0       -26
+/task1/swapf12                          file            133112  0       -27
+/task1/swapf13                          file            133112  0       -28
+/task1/swapf14                          file            133112  0       -29
+[root@vara-sys-22-01 task1]# groupadd -g 10000 vnins
+[root@vara-sys-22-01 task1]# useradd -u 10001 -g vnins -d /home/linux -s /bin/bash linux
+[root@vara-sys-22-01 task1]# useradd -u 10002 -g vnins -M -d /home/unix -s /bin/bash unix
+[root@vara-sys-22-01 task1]# mkdir /home/unix
+[root@vara-sys-22-01 task1]# chown unix:vnins /home/unix
+[root@vara-sys-22-01 task1]# chmod 700 /home/unix
+[root@vara-sys-22-01 task1]# su - unix
+-bash-4.1$ cp /etc/skel/.bash* /home/unix
+-bash-4.1$ bash
+[unix@vara-sys-21-01 ~]$ exit
+-bash-4.1$ logout
+[root@vara-sys-22-01 task1]# passwd linux
+Changing password for user linux.
+New password:
+BAD PASSWORD: it is too short
+BAD PASSWORD: is too simple
+Retype new password:
+passwd: all authentication tokens updated successfully.
+[root@vara-sys-22-01 task1]# passwd unix
+Changing password for user unix.
+New password:
+BAD PASSWORD: it is too short
+BAD PASSWORD: is too simple
+Retype new password:
+passwd: all authentication tokens updated successfully.
+[root@vara-sys-22-01 task1]# vi /etc/sysconfig/network
+[root@vara-sys-22-01 task1]# vi /etc/hosts
+[root@vara-sys-22-01 task1]# init 6
+[root@vara-sys-22-01 task1]#
+login as: root
+root@10.10.22.99's password:
+Last login: Sat Feb  1 08:45:24 2025 from 10.10.0.22
+[root@vara-sys-22-01 ~]#
